@@ -13,7 +13,7 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/TestBucket/Resource"
+    "aws:cdk:path": "ComputeStack/TestBucket/Resource"
    }
   },
   "TestBucketPolicyBA12ED38": {
@@ -68,7 +68,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/TestBucket/Policy/Resource"
+    "aws:cdk:path": "ComputeStack/TestBucket/Policy/Resource"
    }
   },
   "TestBucketAutoDeleteObjectsCustomResource8FEAABD5": {
@@ -90,7 +90,7 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/TestBucket/AutoDeleteObjectsCustomResource/Default"
+    "aws:cdk:path": "ComputeStack/TestBucket/AutoDeleteObjectsCustomResource/Default"
    }
   },
   "TestBucketNotificationsE54C04C2": {
@@ -135,14 +135,14 @@
     "SkipDestinationValidation": false
    },
    "DependsOn": [
-    "TestBucketAllowBucketNotificationsToLambdaStackSizeTrackingLambdaF3A50791413E8C83",
+    "TestBucketAllowBucketNotificationsToComputeStackSizeTrackingLambda3D23E52BDEE84807",
     "TestBucketPolicyBA12ED38"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/TestBucket/Notifications/Resource"
+    "aws:cdk:path": "ComputeStack/TestBucket/Notifications/Resource"
    }
   },
-  "TestBucketAllowBucketNotificationsToLambdaStackSizeTrackingLambdaF3A50791413E8C83": {
+  "TestBucketAllowBucketNotificationsToComputeStackSizeTrackingLambda3D23E52BDEE84807": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -164,7 +164,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/TestBucket/AllowBucketNotificationsToLambdaStackSizeTrackingLambdaF3A50791"
+    "aws:cdk:path": "ComputeStack/TestBucket/AllowBucketNotificationsToComputeStackSizeTrackingLambda3D23E52B"
    }
   },
   "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
@@ -189,7 +189,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+    "aws:cdk:path": "ComputeStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
    }
   },
   "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
@@ -228,7 +228,7 @@
     "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:cdk:path": "ComputeStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
     "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
     "aws:asset:property": "Code"
    }
@@ -264,7 +264,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/SizeTrackingLambda/ServiceRole/Resource"
+    "aws:cdk:path": "ComputeStack/SizeTrackingLambda/ServiceRole/Resource"
    }
   },
   "SizeTrackingLambdaServiceRoleDefaultPolicy725C3475": {
@@ -339,7 +339,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/SizeTrackingLambda/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "ComputeStack/SizeTrackingLambda/ServiceRole/DefaultPolicy/Resource"
    }
   },
   "SizeTrackingLambda9C763A26": {
@@ -349,7 +349,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4.zip"
+     "S3Key": "f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86.zip"
     },
     "Environment": {
      "Variables": {
@@ -368,16 +368,15 @@
       "Arn"
      ]
     },
-    "Runtime": "python3.12",
-    "Timeout": 30
+    "Runtime": "python3.12"
    },
    "DependsOn": [
     "SizeTrackingLambdaServiceRoleDefaultPolicy725C3475",
     "SizeTrackingLambdaServiceRoleEE707D62"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/SizeTrackingLambda/Resource",
-    "aws:asset:path": "asset.0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4",
+    "aws:cdk:path": "ComputeStack/SizeTrackingLambda/Resource",
+    "aws:asset:path": "asset.f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -413,7 +412,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource"
+    "aws:cdk:path": "ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource"
    }
   },
   "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36": {
@@ -442,7 +441,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource"
    }
   },
   "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691": {
@@ -467,7 +466,7 @@
     "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource"
+    "aws:cdk:path": "ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource"
    }
   },
   "PlottingLambdaServiceRole3977BEC1": {
@@ -501,7 +500,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingLambda/ServiceRole/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingLambda/ServiceRole/Resource"
    }
   },
   "PlottingLambdaServiceRoleDefaultPolicy54495C4E": {
@@ -604,7 +603,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingLambda/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingLambda/ServiceRole/DefaultPolicy/Resource"
    }
   },
   "PlottingLambdaE0AD2309": {
@@ -614,7 +613,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4.zip"
+     "S3Key": "f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86.zip"
     },
     "Environment": {
      "Variables": {
@@ -646,8 +645,8 @@
     "PlottingLambdaServiceRole3977BEC1"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingLambda/Resource",
-    "aws:asset:path": "asset.0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4",
+    "aws:cdk:path": "ComputeStack/PlottingLambda/Resource",
+    "aws:asset:path": "asset.f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -658,7 +657,7 @@
     "Name": "PlottingService"
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Resource"
    }
   },
   "PlottingApiCloudWatchRoleCABC5EAC": {
@@ -694,7 +693,7 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/CloudWatchRole/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingApi/CloudWatchRole/Resource"
    }
   },
   "PlottingApiAccount2DAE73CA": {
@@ -713,10 +712,10 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Account"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Account"
    }
   },
-  "PlottingApiDeploymentB1AB2FA237c67cb88a4711795eee1e9b0b18baf9": {
+  "PlottingApiDeploymentB1AB2FA2747885d94e272f62af24b4bf4f41f289": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "Automatically created by the RestApi construct",
@@ -729,7 +728,7 @@
     "PlottingApiplotB5540623"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Deployment/Resource",
+    "aws:cdk:path": "ComputeStack/PlottingApi/Deployment/Resource",
     "aws:cdk:do-not-refactor": true
    }
   },
@@ -737,7 +736,7 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "PlottingApiDeploymentB1AB2FA237c67cb88a4711795eee1e9b0b18baf9"
+     "Ref": "PlottingApiDeploymentB1AB2FA2747885d94e272f62af24b4bf4f41f289"
     },
     "RestApiId": {
      "Ref": "PlottingApi7CA4E44C"
@@ -748,7 +747,7 @@
     "PlottingApiAccount2DAE73CA"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/DeploymentStage.prod/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingApi/DeploymentStage.prod/Resource"
    }
   },
   "PlottingApiplotB5540623": {
@@ -766,10 +765,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Default/plot/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Default/plot/Resource"
    }
   },
-  "PlottingApiplotGETApiPermissionLambdaStackPlottingApi9A1A4BCAGETplotD95FF41B": {
+  "PlottingApiplotGETApiPermissionComputeStackPlottingApi6905B040GETplot63184B37": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -810,10 +809,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Default/plot/GET/ApiPermission.LambdaStackPlottingApi9A1A4BCA.GET..plot"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Default/plot/GET/ApiPermission.ComputeStackPlottingApi6905B040.GET..plot"
    }
   },
-  "PlottingApiplotGETApiPermissionTestLambdaStackPlottingApi9A1A4BCAGETplot4E5064F0": {
+  "PlottingApiplotGETApiPermissionTestComputeStackPlottingApi6905B040GETplot94602BF3": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -850,7 +849,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Default/plot/GET/ApiPermission.Test.LambdaStackPlottingApi9A1A4BCA.GET..plot"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Default/plot/GET/ApiPermission.Test.ComputeStackPlottingApi6905B040.GET..plot"
    }
   },
   "PlottingApiplotGET11B2255D": {
@@ -893,7 +892,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/PlottingApi/Default/plot/GET/Resource"
+    "aws:cdk:path": "ComputeStack/PlottingApi/Default/plot/GET/Resource"
    }
   },
   "DriverLambdaServiceRoleB0E11A6F": {
@@ -927,7 +926,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/DriverLambda/ServiceRole/Resource"
+    "aws:cdk:path": "ComputeStack/DriverLambda/ServiceRole/Resource"
    }
   },
   "DriverLambdaServiceRoleDefaultPolicy2F9D5782": {
@@ -937,9 +936,6 @@
      "Statement": [
       {
        "Action": [
-        "s3:GetObject*",
-        "s3:GetBucket*",
-        "s3:List*",
         "s3:DeleteObject*",
         "s3:PutObject",
         "s3:PutObjectLegalHold",
@@ -983,7 +979,7 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/DriverLambda/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "ComputeStack/DriverLambda/ServiceRole/DefaultPolicy/Resource"
    }
   },
   "DriverLambda11B3F668": {
@@ -993,7 +989,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4.zip"
+     "S3Key": "f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86.zip"
     },
     "Environment": {
      "Variables": {
@@ -1034,15 +1030,15 @@
      ]
     },
     "Runtime": "python3.12",
-    "Timeout": 120
+    "Timeout": 60
    },
    "DependsOn": [
     "DriverLambdaServiceRoleDefaultPolicy2F9D5782",
     "DriverLambdaServiceRoleB0E11A6F"
    ],
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/DriverLambda/Resource",
-    "aws:asset:path": "asset.0e45c95b6dd52081535887a2fab4b8b924cbd1569b2165e43176f8cdfc7738a4",
+    "aws:cdk:path": "ComputeStack/DriverLambda/Resource",
+    "aws:asset:path": "asset.f34b6faf6291f7943254be7b7d4eff2556c6841f26d09327303ba534ce0c8f86",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
@@ -1053,7 +1049,7 @@
     "Analytics": "v2:deflate64:H4sIAAAAAAAA/22PUW6DMBBEz5J/xy2hFyBU/auKyAEixyzEBduIXRch5LtXtmlppH7Nm7G94z3x00vGnw9ixqNs+uOgbny9kJA9EzNeV8z5enayB2JlazZKUtlByWWPN5/MWSB4Ngh9awRfy9ZUMGmFqKxhb85IClC25oc9U0LztbYDhDjqXpDIM8yvAhEIeRGEiVF1gmAWC19rQCpGFV/vWEhpnSH2CuNgFw0m7vHHXUh0sTJBDWjdJCH8/9dsMxO/A91tE6JE3rPSIVn97+3Ho2qyX6qBKU6PK4RWZbqHqg9HoyPPqoXu1jzlPMt5dvhEpY6TM6Q08DrpN/Xy3VC+AQAA"
    },
    "Metadata": {
-    "aws:cdk:path": "LambdaStack/CDKMetadata/Default"
+    "aws:cdk:path": "ComputeStack/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
   }

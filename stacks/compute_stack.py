@@ -12,7 +12,7 @@ from aws_cdk import (
 from constructs import Construct
 
 
-class LambdaStack(Stack):
+class ComputeStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, *,
                  table: dynamodb.Table, **kwargs):
         super().__init__(scope, construct_id, **kwargs)
@@ -36,7 +36,6 @@ class LambdaStack(Stack):
             runtime=_lambda.Runtime.PYTHON_3_12,
             handler="size_tracking.handler",
             code=_lambda.Code.from_asset("lambda"),
-            timeout=Duration.seconds(30),
             environment={
                 "TABLE_NAME": table.table_name,
                 "BUCKET_NAME": self.bucket.bucket_name,
@@ -94,11 +93,11 @@ class LambdaStack(Stack):
             runtime=_lambda.Runtime.PYTHON_3_12,
             handler="driver.handler",
             code=_lambda.Code.from_asset("lambda"),
-            timeout=Duration.seconds(120),
+            timeout=Duration.seconds(60),
             environment={
                 "BUCKET_NAME": self.bucket.bucket_name,
                 "API_URL": api_url,
             },
         )
 
-        self.bucket.grant_read_write(self.driver_lambda)
+        self.bucket.grant_write(self.driver_lambda)

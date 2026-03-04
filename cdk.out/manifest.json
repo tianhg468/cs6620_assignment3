@@ -87,28 +87,28 @@
       },
       "displayName": "StorageStack"
     },
-    "LambdaStack.assets": {
+    "ComputeStack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "LambdaStack.assets.json",
+        "file": "ComputeStack.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "LambdaStack": {
+    "ComputeStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "LambdaStack.template.json",
+        "templateFile": "ComputeStack.template.json",
         "terminationProtection": false,
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/81ef82320d1573f3e07e4a812b8fd5be01508800a0e7d79993e1671041bf0129.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/162ac7664f5cc946c88d9df18a615911bb1e3277e11cced55183683552473111.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "LambdaStack.assets"
+          "ComputeStack.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
@@ -118,221 +118,221 @@
       },
       "dependencies": [
         "StorageStack",
-        "LambdaStack.assets"
+        "ComputeStack.assets"
       ],
       "metadata": {
-        "/LambdaStack/TestBucket/Resource": [
+        "/ComputeStack/TestBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "TestBucket560B80BC"
           }
         ],
-        "/LambdaStack/TestBucket/Policy/Resource": [
+        "/ComputeStack/TestBucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "TestBucketPolicyBA12ED38"
           }
         ],
-        "/LambdaStack/TestBucket/AutoDeleteObjectsCustomResource/Default": [
+        "/ComputeStack/TestBucket/AutoDeleteObjectsCustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "TestBucketAutoDeleteObjectsCustomResource8FEAABD5"
           }
         ],
-        "/LambdaStack/TestBucket/Notifications/Resource": [
+        "/ComputeStack/TestBucket/Notifications/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "TestBucketNotificationsE54C04C2"
           }
         ],
-        "/LambdaStack/TestBucket/AllowBucketNotificationsToLambdaStackSizeTrackingLambdaF3A50791": [
+        "/ComputeStack/TestBucket/AllowBucketNotificationsToComputeStackSizeTrackingLambda3D23E52B": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TestBucketAllowBucketNotificationsToLambdaStackSizeTrackingLambdaF3A50791413E8C83"
+            "data": "TestBucketAllowBucketNotificationsToComputeStackSizeTrackingLambda3D23E52BDEE84807"
           }
         ],
-        "/LambdaStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+        "/ComputeStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
           {
             "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
             "data": true
           }
         ],
-        "/LambdaStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+        "/ComputeStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
           }
         ],
-        "/LambdaStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+        "/ComputeStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
           }
         ],
-        "/LambdaStack/SizeTrackingLambda/ServiceRole/Resource": [
+        "/ComputeStack/SizeTrackingLambda/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SizeTrackingLambdaServiceRoleEE707D62"
           }
         ],
-        "/LambdaStack/SizeTrackingLambda/ServiceRole/DefaultPolicy/Resource": [
+        "/ComputeStack/SizeTrackingLambda/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SizeTrackingLambdaServiceRoleDefaultPolicy725C3475"
           }
         ],
-        "/LambdaStack/SizeTrackingLambda/Resource": [
+        "/ComputeStack/SizeTrackingLambda/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "SizeTrackingLambda9C763A26"
           }
         ],
-        "/LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
+        "/ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
           }
         ],
-        "/LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
+        "/ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36"
           }
         ],
-        "/LambdaStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
+        "/ComputeStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691"
           }
         ],
-        "/LambdaStack/PlottingLambda/ServiceRole/Resource": [
+        "/ComputeStack/PlottingLambda/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingLambdaServiceRole3977BEC1"
           }
         ],
-        "/LambdaStack/PlottingLambda/ServiceRole/DefaultPolicy/Resource": [
+        "/ComputeStack/PlottingLambda/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingLambdaServiceRoleDefaultPolicy54495C4E"
           }
         ],
-        "/LambdaStack/PlottingLambda/Resource": [
+        "/ComputeStack/PlottingLambda/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingLambdaE0AD2309"
           }
         ],
-        "/LambdaStack/PlottingApi/Resource": [
+        "/ComputeStack/PlottingApi/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApi7CA4E44C"
           }
         ],
-        "/LambdaStack/PlottingApi/CloudWatchRole/Resource": [
+        "/ComputeStack/PlottingApi/CloudWatchRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiCloudWatchRoleCABC5EAC"
           }
         ],
-        "/LambdaStack/PlottingApi/Account": [
+        "/ComputeStack/PlottingApi/Account": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiAccount2DAE73CA"
           }
         ],
-        "/LambdaStack/PlottingApi/Deployment/Resource": [
+        "/ComputeStack/PlottingApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PlottingApiDeploymentB1AB2FA237c67cb88a4711795eee1e9b0b18baf9"
+            "data": "PlottingApiDeploymentB1AB2FA2747885d94e272f62af24b4bf4f41f289"
           }
         ],
-        "/LambdaStack/PlottingApi/DeploymentStage.prod/Resource": [
+        "/ComputeStack/PlottingApi/DeploymentStage.prod/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiDeploymentStageprod0540CEA9"
           }
         ],
-        "/LambdaStack/PlottingApi/Endpoint": [
+        "/ComputeStack/PlottingApi/Endpoint": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiEndpoint9B251261"
           }
         ],
-        "/LambdaStack/PlottingApi/Default/plot/Resource": [
+        "/ComputeStack/PlottingApi/Default/plot/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiplotB5540623"
           }
         ],
-        "/LambdaStack/PlottingApi/Default/plot/GET/ApiPermission.LambdaStackPlottingApi9A1A4BCA.GET..plot": [
+        "/ComputeStack/PlottingApi/Default/plot/GET/ApiPermission.ComputeStackPlottingApi6905B040.GET..plot": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PlottingApiplotGETApiPermissionLambdaStackPlottingApi9A1A4BCAGETplotD95FF41B"
+            "data": "PlottingApiplotGETApiPermissionComputeStackPlottingApi6905B040GETplot63184B37"
           }
         ],
-        "/LambdaStack/PlottingApi/Default/plot/GET/ApiPermission.Test.LambdaStackPlottingApi9A1A4BCA.GET..plot": [
+        "/ComputeStack/PlottingApi/Default/plot/GET/ApiPermission.Test.ComputeStackPlottingApi6905B040.GET..plot": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PlottingApiplotGETApiPermissionTestLambdaStackPlottingApi9A1A4BCAGETplot4E5064F0"
+            "data": "PlottingApiplotGETApiPermissionTestComputeStackPlottingApi6905B040GETplot94602BF3"
           }
         ],
-        "/LambdaStack/PlottingApi/Default/plot/GET/Resource": [
+        "/ComputeStack/PlottingApi/Default/plot/GET/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PlottingApiplotGET11B2255D"
           }
         ],
-        "/LambdaStack/ApiEndpoint": [
+        "/ComputeStack/ApiEndpoint": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ApiEndpoint"
           }
         ],
-        "/LambdaStack/DriverLambda/ServiceRole/Resource": [
+        "/ComputeStack/DriverLambda/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DriverLambdaServiceRoleB0E11A6F"
           }
         ],
-        "/LambdaStack/DriverLambda/ServiceRole/DefaultPolicy/Resource": [
+        "/ComputeStack/DriverLambda/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DriverLambdaServiceRoleDefaultPolicy2F9D5782"
           }
         ],
-        "/LambdaStack/DriverLambda/Resource": [
+        "/ComputeStack/DriverLambda/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DriverLambda11B3F668"
           }
         ],
-        "/LambdaStack/CDKMetadata/Default": [
+        "/ComputeStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/LambdaStack/CDKMetadata/Condition": [
+        "/ComputeStack/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/LambdaStack/BootstrapVersion": [
+        "/ComputeStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/LambdaStack/CheckBootstrapVersion": [
+        "/ComputeStack/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "LambdaStack"
+      "displayName": "ComputeStack"
     },
     "Tree": {
       "type": "cdk:tree",

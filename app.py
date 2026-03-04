@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import aws_cdk as cdk
 from stacks.storage_stack import StorageStack
-from stacks.lambda_stack import LambdaStack
+from stacks.compute_stack import ComputeStack
 
 app = cdk.App()
 
 storage = StorageStack(app, "StorageStack")
-lambdas = LambdaStack(app, "LambdaStack",
+compute = ComputeStack(app, "ComputeStack",
     table=storage.table
 )
 

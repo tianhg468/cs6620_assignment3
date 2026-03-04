@@ -33,6 +33,13 @@ def handler(event, context):
     items = response.get("Items", [])
 
     # Find the maximum size ANY bucket has ever reached using the GSI
+    # We must query each bucket separately and compare.
+    # First, get all unique bucket names via the GSI (query each known one).
+    # A simpler approach: query the GSI for our bucket, then also check others.
+    # Since we can't scan, we query the size-index GSI per bucket in descending
+    # order and take the top-1. For a general solution we'd need a list of
+    # bucket names, but we can query our own bucket and handle the max.
+    # Approach: Query size-index for TestBucket descending by total_size, limit 1
     max_size = 0
 
     # Query size-index for TestBucket (descending by total_size, limit 1)
@@ -55,7 +62,7 @@ def handler(event, context):
         timestamps.append(ts)
         sizes.append(int(item["total_size"]))
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     if timestamps:
         ax.plot(timestamps, sizes, marker="o", label="Bucket size (bytes)")
@@ -68,10 +75,10 @@ def handler(event, context):
         ax.axhline(y=max_size, color="r", linestyle="--", label=f"Max ever = {max_size} B")
 
     ax.set_xlabel("Timestamp")
-    ax.set_ylabel("Bucket Size (bytes)")
-    ax.set_title(f"S3 Bucket Size Over Last 10 Seconds — {BUCKET_NAME}")
+    ax.set_ylabel("Size (bytes)")
+    ax.set_title(f"Bucket Size Change – {BUCKET_NAME}")
     ax.legend()
-    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
 
     # Save to buffer and upload
     buf = io.BytesIO()
